@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="rgb.css">
+ <title>RGB</title>
+</head>
+<body>
+    <div class="inputs">
+
+    <div class="square1"><h3 class="red">RED</h3></div>
+    <input id="value1" type="range" class="range1" min="0" max="100" value="0" oninput="input11()">
+     <h4>value:<span id="input1"></span></h4>
+
+    <div class="square2"><h3 class="green">GREEN</h3></div>
+    <input id="value2" type="range" class="range2" min="0" max="100" value="0" oninput="input12()">
+     <h4>value:<span id="input2"></span></h4>
+
+    <div class="square3"><h3 class="blue">BLUE</h3></div >
+    <input id="value3" type="range" class="range3" min="0" max="100" value="0" oninput="input13()">
+     <h4>value:<span id="input3"></span></h4>
+
+     <input type="text name="text" id="inputText" oninput="texting()">
+     <h4>value:<span id="text1"></span></h4>
+   </div>
+
+    <script>
+      var s = document.getElementById("value1")
+      var p = document.getElementById("input1")
+
+      var s1 = document.getElementById("value2") 
+      var p1 = document.getElementById("input2")
+  
+      var s3 = document.getElementById("value3")
+      var p3 = document.getElementById("input3")
+      
+      var text = document.getElementById("inputText")
+      var spantext= document.getElementById("text1")
+
+   let texting=()=>{
+      let mat = /[01|10]/
+      let nmat = mat.test(text.value)
+      if(nmat){
+          spantext.innerHTML=`${text.value} is a binary string`
+      }else{
+         spantext.innerHTML=`${text.value} is not a binary string`
+         spantext.style.color='red'
+      }
+   }
+
+   var input11 =()=>{
+
+    p.innerHTML=s.value
+
+    if(s.value >= 60){
+       p.style.color="red"; 
+    }else{
+       p.style.color="aqua";
+    }    
+  }
+   var input12 =()=>{ 
+   p1.innerHTML=s1.value
+
+   if( s1.value >= 60){
+       p1.style.color="green"; 
+   }else{
+       p1.style.color="aqua";
+   }   
+   } 
+   var input13 =()=>{ 
+   p3.innerHTML=s3.value
+
+    if( s3.value >= 60){
+        p3.style.color="blue"; 
+     }else{
+        p3.style.color="aqua";
+   }     
+}  
+
+  
+ </script>
+</body>
+
+</html>
