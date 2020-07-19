@@ -1,2 +1,2 @@
 # Text-to-Audio
-this is a software that converts audio to a text
+this is a software which you can control the voloum of rgb color of a lamp
